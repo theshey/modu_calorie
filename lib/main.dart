@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modu_calorie/login_pages/entry_page.dart';
 import 'package:modu_calorie/login_pages/login_page.dart';
+import 'login_pages/sign_up_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: LoginPage(),
+        body: SignUpPage(),
       ),
     );
   }

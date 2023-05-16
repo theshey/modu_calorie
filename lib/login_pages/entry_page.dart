@@ -49,7 +49,7 @@ class EntryPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               // for login button to be on the same place
-              // with one in the next page,
+              // with ones of other pages,
               // login button and the widgets below are contained in
               // the Container that has height of 180.0
               // and aligned to the top of it.
@@ -68,13 +68,13 @@ class EntryPage extends StatelessWidget {
                     // or sign in with
                     Row(
                       children: const <Widget>[
+                        SizedBox(width: 30),
                         Expanded(
                           child: Divider(
                               thickness: 1.5,
-                              indent: 30.0,
-                              endIndent: 7.0,
                               color: Colors.grey),
                         ),
+                        SizedBox(width: 10),
                         Text(
                           '간편하게 SNS 로그인',
                           style: TextStyle(
@@ -82,14 +82,14 @@ class EntryPage extends StatelessWidget {
                             color: Colors.grey,
                           ),
                         ),
+                        SizedBox(width: 10),
                         Expanded(
                           child: Divider(
                             thickness: 1.5,
-                            indent: 7.0,
-                            endIndent: 30.0,
                             color: Colors.grey,
                           ),
                         ),
+                        SizedBox(width: 30),
                       ],
                     ),
                     const SizedBox(height: 5.0),
