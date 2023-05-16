@@ -4,14 +4,14 @@ class ConfirmPasswordTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final TextInputAction textInputAction;
-  final String confirmationErrorText;
+  final String? Function(String?)? validator;
 
   const ConfirmPasswordTextFormField({
     Key? key,
-    required this.controller,
     required this.hintText,
+    required this.controller,
     required this.textInputAction,
-    required this.confirmationErrorText,
+    required this.validator,
   }) : super(key: key);
 
   @override
@@ -27,6 +27,7 @@ class _ConfirmPasswordTextFormFieldState
     return TextFormField(
       controller: widget.controller,
       autocorrect: false,
+      validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: const TextStyle(color: Colors.grey),

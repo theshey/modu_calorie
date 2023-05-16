@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:modu_calorie/entry_pages/entry_page.dart';
-import 'package:modu_calorie/entry_pages/login_page.dart';
+import 'package:modu_calorie/entry_pages/sign_in_page.dart';
 import 'package:modu_calorie/entry_pages/sign_up_page.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -14,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: SignInPage(),
     );
   }
 }

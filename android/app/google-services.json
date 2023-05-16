@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "165970492693",
+    "project_id": "modu-calorie",
+    "storage_bucket": "modu-calorie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165970492693:android:6a62854d136c38de8ffd1c",
+        "android_client_info": {
+          "package_name": "com.example.modu_calorie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165970492693-iguohlf1onoluj3de4ko6msbn6mgo1pe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyqRwszdMHRgX-CDyRfXd1Wf3BwolYQow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165970492693-iguohlf1onoluj3de4ko6msbn6mgo1pe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165970492693-91p5glgp6ngs53p11ilmvo2pvm9bak56.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.moduCalorie"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
