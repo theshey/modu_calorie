@@ -24,6 +24,7 @@ class LogoButton extends StatelessWidget {
         minimumSize: const Size.fromHeight(30.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
+          side: const BorderSide(width: 0.5, color: Colors.grey),
         ),
       ),
       child: Image.asset(imagePath),

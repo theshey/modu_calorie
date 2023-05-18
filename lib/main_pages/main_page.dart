@@ -3,14 +3,14 @@ import 'package:modu_calorie/main_pages/favorite_page.dart';
 import 'package:modu_calorie/main_pages/home_page.dart';
 import 'package:modu_calorie/main_pages/user_page.dart';
 
-class MainLayout extends StatefulWidget {
-  const MainLayout({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => MainLayoutState();
+  State<StatefulWidget> createState() => MainPageState();
 }
 
-class MainLayoutState extends State<MainLayout> {
+class MainPageState extends State<MainPage> {
   int _currentIndex = 1;
   final PageController _pageController = PageController(initialPage: 1);
 

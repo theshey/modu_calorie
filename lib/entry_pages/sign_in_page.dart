@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:modu_calorie/components/background_image.dart';
 
-import '../components/app_bars/app_bar_button.dart';
-import '../components/buttons/custom_button.dart';
-import '../components/text_form_fields/email_text_form_field.dart';
-import '../components/text_form_fields/password_text_form_field.dart';
+import '../components/app_bar_buttons/app_bar_translucent_button.dart';
+import '../components/background_images/background_image.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -17,6 +14,8 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  bool _obscureTextPassword = true;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -52,14 +51,17 @@ class _SignInPageState extends State<SignInPage> {
     }
 
     // touch the screen to unfocus the TextFormField.
-    return SafeArea(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
           leading: AppBarTranslucentButton(
             icon: Icons.arrow_back,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('EntryPage');
+            },
           ),
         ),
         extendBodyBehindAppBar: true,
@@ -78,7 +80,7 @@ class _SignInPageState extends State<SignInPage> {
                 children: [
                   // background image
                   const BackgroundImage(
-                    imagePath: 'images/background_image_login_page.jpg',
+                    imagePath: 'images/background_image_sign_in_page.jpg',
                   ),
                   // bottom sheet
                   Align(
@@ -110,27 +112,25 @@ class _SignInPageState extends State<SignInPage> {
                                   ),
                                 ),
                                 const SizedBox(height: 5),
-                                const Text(
+                                Text(
                                   '이메일과 비밀번호를 입력해주세요.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.grey,
-                                  ),
+                                  style: Theme.of(context).textTheme.labelSmall,
                                 ),
                                 const SizedBox(height: 40),
-                                // e-mail
-                                EmailTextFormField(
+                                TextFormField(
                                   controller: _emailController,
-                                  hintText: 'Email 입력',
                                   textInputAction: TextInputAction.next,
+                                  decoration: const InputDecoration(
+                                    hintText: 'Email 입력',
+                                  ),
                                   validator: (String? value) {
                                     if (value!.isEmpty) {
                                       return 'Email 주소를 입력해주세요.';
                                     }
                                     if (!RegExp(
-                                            "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                                        .hasMatch(value!)) {
+                                      "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]",
+                                    ).hasMatch(value!)) {
                                       return '유효한 Email 주소를 입력해주세요.';
                                     }
                                     return null;
@@ -140,11 +140,24 @@ class _SignInPageState extends State<SignInPage> {
                                   },
                                 ),
                                 const SizedBox(height: 20.0),
-                                // password
-                                PasswordTextFormField(
-                                  hintText: '비밀번호 입력',
+                                TextFormField(
                                   controller: _passwordController,
                                   textInputAction: TextInputAction.send,
+                                  decoration: InputDecoration(
+                                    hintText: '비밀번호 입력',
+                                    suffixIcon: IconButton(
+                                      icon: Icon(
+                                        _obscureTextPassword
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _obscureTextPassword = !_obscureTextPassword;
+                                        });
+                                      },
+                                    ),
+                                  ),
                                   validator: (String? value) {
                                     if (value!.isEmpty) {
                                       return '비밀번호를 입력해주세요.';
@@ -156,11 +169,11 @@ class _SignInPageState extends State<SignInPage> {
                                   },
                                 ),
                                 const SizedBox(height: 40.0),
-                                CustomButton(
+                                ElevatedButton(
                                   onPressed: () {
                                     _tryValidation();
                                   },
-                                  text: '로그인',
+                                  child: Text('로그인'),
                                 ),
                                 const SizedBox(height: 30.0),
                                 // bottom texts
@@ -184,6 +197,10 @@ class _SignInPageState extends State<SignInPage> {
                                       style: TextStyle(fontSize: 12.0),
                                     ),
                                     GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context)
+                                            .pushNamed('SignUpPage');
+                                      },
                                       child: Text(
                                         '회원가입',
                                         style: TextStyle(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AppBarTranslucentButton extends StatelessWidget {
+class AppBarButton extends StatelessWidget {
   final IconData? icon;
   final Function()? onPressed;
 
-  const AppBarTranslucentButton({
+  const AppBarButton({
     super.key,
     required this.icon,
     required this.onPressed,
