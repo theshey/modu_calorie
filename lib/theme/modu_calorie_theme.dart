@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ModuCalorieTheme {
   static ThemeData getThemeData() {
     return ThemeData(
+      primaryColor: Colors.lightGreen,
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -21,7 +22,7 @@ class ModuCalorieTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           fixedSize: const Size.fromHeight(45.0),
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.lightGreen,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),

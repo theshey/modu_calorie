@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:modu_calorie/main_pages/favorite_page.dart';
-import 'package:modu_calorie/main_pages/home_page.dart';
-import 'package:modu_calorie/main_pages/user_page.dart';
+import 'package:modu_calorie/pages/favorite_page.dart';
+import 'package:modu_calorie/pages/home_page.dart';
+import 'package:modu_calorie/pages/user_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,18 +16,24 @@ class MainPageState extends State<MainPage> {
 
   final _bottomNavigationBarItems = [
     const BottomNavigationBarItem(
-      icon: Icon(Icons.star_rounded),
-      label: 'Star',
-    ),
-    const BottomNavigationBarItem(
       icon: Icon(Icons.home_rounded),
       label: 'Home',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.star_rounded),
+      label: 'Star',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.person_rounded),
       label: 'User',
     ),
   ];
+
+  final Widget _fab = FloatingActionButton(
+    onPressed: () {},
+    backgroundColor: Colors.lightGreen,
+    child: const Icon(Icons.camera),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +46,8 @@ class MainPageState extends State<MainPage> {
           });
         },
         children: const [
-          FavoritePage(),
           HomePage(),
+          FavoritePage(),
           UserPage(),
         ],
       ),
@@ -50,7 +56,7 @@ class MainPageState extends State<MainPage> {
         items: _bottomNavigationBarItems,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.lightGreen,
         unselectedItemColor: Colors.grey,
         onTap: (index) {
           _pageController.animateToPage(
@@ -60,6 +66,7 @@ class MainPageState extends State<MainPage> {
           );
         },
       ),
+      floatingActionButton: _fab,
     );
   }
 }

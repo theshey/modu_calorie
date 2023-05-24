@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:modu_calorie/entry_pages/entry_page.dart';
-import 'package:modu_calorie/entry_pages/sign_in_page.dart';
-import 'package:modu_calorie/entry_pages/sign_up_page.dart';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'package:modu_calorie/entry_pages/signed_up_page.dart';
+import 'package:modu_calorie/pages/entry_page.dart';
+import 'package:modu_calorie/pages/sign_in_page.dart';
+import 'package:modu_calorie/pages/sign_up_page.dart';
+import 'package:modu_calorie/pages/signed_up_page.dart';
 import 'package:modu_calorie/theme/modu_calorie_theme.dart';
-import 'firebase_options.dart';
-import 'main_pages/main_page.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
-}
+import 'pages/main_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

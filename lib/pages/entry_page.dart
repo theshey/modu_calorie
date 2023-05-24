@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../components/background_images/background_image.dart';
-import '../components/buttons/logo_button.dart';
+import 'package:modu_calorie/widgets/background_image.dart';
+import 'package:modu_calorie/widgets/logo_button.dart';
 
 class EntryPage extends StatelessWidget {
   const EntryPage({super.key});

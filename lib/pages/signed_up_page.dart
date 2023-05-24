@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/background_images/background_image.dart';
+import 'package:modu_calorie/widgets/background_image.dart';
 
 class SignedUpPage extends StatelessWidget {
   const SignedUpPage({super.key});

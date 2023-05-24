@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../components/app_bar_buttons/app_bar_button.dart';
-import '../components/buttons/logo_button.dart';
+import 'package:modu_calorie/widgets/app_bar_button.dart';
+import 'package:modu_calorie/widgets/logo_button.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

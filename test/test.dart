@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modu_calorie/main_pages/main_page.dart';
+import 'package:modu_calorie/pages/main_page.dart';
 import 'package:modu_calorie/theme/modu_calorie_theme.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ModuCalorieTheme.getThemeData(),
-      home: MainPage(),
+      home: const MainPage(),
     );
   }
 }

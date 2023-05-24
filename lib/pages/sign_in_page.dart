@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../components/app_bar_buttons/app_bar_translucent_button.dart';
-import '../components/background_images/background_image.dart';
+import 'package:modu_calorie/widgets/app_bar_translucent_button.dart';
+import 'package:modu_calorie/widgets/background_image.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
